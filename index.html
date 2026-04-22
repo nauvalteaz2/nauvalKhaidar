@@ -13,17 +13,44 @@
       background-color: #0f172a;
       color: white;
     }
+
     .hero {
       padding: 100px 0;
       text-align: center;
     }
+
     .card {
       background-color: #1e293b;
       border: none;
       border-radius: 15px;
+      color: white;
     }
+
+    .card p, .card li {
+      color: #cbd5f5;
+    }
+
     a {
       text-decoration: none;
+    }
+
+    .btn-outline-light {
+      color: white;
+      border-color: #94a3b8;
+    }
+
+    .btn-outline-light:hover {
+      background-color: #334155;
+      border-color: #334155;
+    }
+
+    .highlight-box {
+      background: #020617;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 15px;
+      font-size: 14px;
+      color: #94a3b8;
     }
   </style>
 </head>
@@ -59,13 +86,13 @@
           <li>Timer-based resource system</li>
         </ul>
 
-        <!-- VIDEO -->
-        <div class="ratio ratio-16x9 mb-3">
-          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
+        <!-- HIGHLIGHT (replace video) -->
+        <div class="highlight-box">
+          Focus: System design, spawning logic, combat behavior, and resource management.
         </div>
 
         <!-- LINKS -->
-        <a href="https://tijek.itch.io/" class="btn btn-primary mb-2">
+        <a href="https://tijek.itch.io/gametd" class="btn btn-primary mb-2">
           ▶ Play on itch.io
         </a>
 
@@ -78,10 +105,28 @@
     <!-- PROJECT 2 -->
     <div class="col-md-6">
       <div class="card p-4">
-        <h4>Platformer Prototype Si Ireng</h4>
+        <h4>Platformer Prototype - Si Ireng</h4>
         <p>
-          Basic movement, jump, and attack system with animation control, and Additive Scene
+          Platformer prototype with movement, jump, attack system, and additive scene management.
         </p>
+
+        <ul>
+          <li>Character movement & animation system</li>
+          <li>Attack state handling</li>
+          <li>Scene management (additive scenes)</li>
+        </ul>
+
+        <div class="highlight-box">
+          Focus: Animation state handling and scene structure.
+        </div>
+
+        <a href="https://tijek.itch.io/si-ireng" class="btn btn-primary mb-2">
+          ▶ Play on itch.io
+        </a>
+
+        <a href="https://github.com/nauvalteaz2" class="btn btn-outline-light">
+          💻 View Github
+        </a>
       </div>
     </div>
 
@@ -93,8 +138,8 @@
   <h3>Contact</h3>
   <p>Email: nauvalteaz@gmail.com</p>
   <p>
-    <a href="https://github.com/nauvalteaz2">GitHub</a> |
-    <a href="https://tijek.itch.io/">itch.io</a>
+    <a href="https://github.com/nauvalteaz2" class="text-info">GitHub</a> |
+    <a href="https://tijek.itch.io/" class="text-info">itch.io</a>
   </p>
 </section>
 
