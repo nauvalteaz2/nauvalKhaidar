@@ -1,52 +1,102 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Nauval | Unity Developer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
     body {
-      font-family: Arial;
-      margin: 40px;
-      background: #0f172a;
+      background-color: #0f172a;
       color: white;
     }
-    h1 { color: #38bdf8; }
-    .project {
-      margin-bottom: 30px;
-      padding: 20px;
-      background: #1e293b;
-      border-radius: 10px;
+    .hero {
+      padding: 100px 0;
+      text-align: center;
+    }
+    .card {
+      background-color: #1e293b;
+      border: none;
+      border-radius: 15px;
+    }
+    a {
+      text-decoration: none;
     }
   </style>
 </head>
 
 <body>
 
-<h1>Nauval Khaidar</h1>
-<p>Unity Game Developer</p>
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1 class="fw-bold">Nauval Khaidar</h1>
+    <p class="lead">Unity Game Developer</p>
+    <p>I build gameplay systems, mechanics, and interactive experiences.</p>
+  </div>
+</section>
 
-<div class="project">
-  <h2>Tower Defense Game</h2>
+<!-- PROJECTS -->
+<section class="container mb-5">
+  <h2 class="mb-4">Projects</h2>
+
+  <div class="row g-4">
+
+    <!-- PROJECT 1 -->
+    <div class="col-md-6">
+      <div class="card p-4">
+        <h4>Tower Defense Game</h4>
+        <p>
+          A side-scrolling tower defense game inspired by Battle Cats.
+        </p>
+
+        <ul>
+          <li>Character spawn system (UI + coin)</li>
+          <li>Enemy AI and combat system</li>
+          <li>Timer-based resource system</li>
+        </ul>
+
+        <!-- VIDEO -->
+        <div class="ratio ratio-16x9 mb-3">
+          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID"></iframe>
+        </div>
+
+        <!-- LINKS -->
+        <a href="https://tijek.itch.io/" class="btn btn-primary mb-2">
+          ▶ Play on itch.io
+        </a>
+
+        <a href="https://github.com/nauvalteaz2" class="btn btn-outline-light">
+          💻 View Github
+        </a>
+      </div>
+    </div>
+
+    <!-- PROJECT 2 -->
+    <div class="col-md-6">
+      <div class="card p-4">
+        <h4>Platformer Prototype Si Ireng</h4>
+        <p>
+          Basic movement, jump, and attack system with animation control, and Additive Scene
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="text-center mb-5">
+  <h3>Contact</h3>
+  <p>Email: nauvalteaz@gmail.com</p>
   <p>
-    A side-scrolling tower defense game inspired by Battle Cats.
+    <a href="https://github.com/nauvalteaz2">GitHub</a> |
+    <a href="https://tijek.itch.io/">itch.io</a>
   </p>
-
-  <ul>
-    <li>Character spawn system using UI</li>
-    <li>Coin system with timer</li>
-    <li>Enemy AI and combat system</li>
-  </ul>
-
- <p>
-  <a href="https://tijek.itch.io/">
-    ▶ Play Game on itch.io
-  </a>
-</p>
-</div>
-
-<div class="project">
-  <h2>Platformer Prototype</h2>
-  <p>Basic movement, jump, and attack system.</p>
-</div>
+</section>
 
 </body>
 </html>
