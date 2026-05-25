@@ -1,207 +1,381 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Nauval | Unity Developer</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>M. Nauval Khaidar | Game Developer & Programmer</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: radial-gradient(circle at top, #0f172a, #020617 50%, #000);
+      color: #f8fafc;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
 
-<style>
-body {
-  background: radial-gradient(circle at top, #020617, #020617 40%, #000);
-  color: white;
-  font-family: 'Segoe UI', sans-serif;
-}
-  .card h4 {
-  color: #e2e8f0;
-}
+    /* Hero Section */
+    .hero {
+      padding: 140px 20px 80px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      background: linear-gradient(45deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 30px rgba(56, 189, 248, 0.2);
+    }
+    .hero .lead {
+      color: #94a3b8;
+      font-weight: 500;
+    }
 
-/* HERO */
-.hero {
-  padding: 120px 20px;
-  text-align: center;
-}
+    /* Glow Line Utility */
+    .glow-line {
+      height: 2px;
+      background: linear-gradient(to right, transparent, #38bdf8, #6366f1, transparent);
+      margin: 25px auto;
+      width: 80%;
+      max-width: 600px;
+    }
 
-.hero h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  text-shadow: 0 0 20px #38bdf8;
-}
+    /* Filter Buttons Container */
+    .filter-container {
+      margin-bottom: 40px;
+    }
+    .btn-filter {
+      background: rgba(30, 41, 59, 0.4);
+      color: #94a3b8;
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      padding: 8px 18px;
+      border-radius: 30px;
+      margin: 5px;
+      transition: all 0.3s ease;
+    }
+    .btn-filter.active, .btn-filter:hover {
+      background: linear-gradient(45deg, #38bdf8, #6366f1);
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 0 15px rgba(56, 189, 248, 0.4);
+    }
 
-.hero p {
-  color: #94a3b8;
-}
+    /* Cards */
+    .card-portfolio {
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      backdrop-filter: blur(12px);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-portfolio:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color: rgba(56, 189, 248, 0.4);
+      box-shadow: 0 15px 30px rgba(56, 189, 248, 0.15);
+    }
+    .card-title {
+      color: #f1f5f9;
+      font-weight: 700;
+    }
+    .project-tag {
+      font-size: 0.75rem;
+      background: rgba(56, 189, 248, 0.1);
+      color: #38bdf8;
+      padding: 4px 10px;
+      border-radius: 12px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      display: inline-block;
+    }
 
-/* CARD */
-.card {
-  background: rgba(30, 41, 59, 0.6);
-  border-radius: 20px;
-  border: 1px solid rgba(148,163,184,0.1);
-  backdrop-filter: blur(10px);
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
+    /* Custom Highlight Box */
+    .highlight-box {
+      background: rgba(2, 6, 23, 0.6);
+      padding: 12px 15px;
+      border-radius: 12px;
+      margin: 15px 0;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      border-left: 3px solid #38bdf8;
+    }
 
-.card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 0 25px rgba(56,189,248,0.3);
-}
+    /* Buttons */
+    .btn-action-group {
+      margin-top: auto; /* Push buttons to the bottom of the card */
+    }
+    .btn-play {
+      background: linear-gradient(45deg, #38bdf8, #6366f1);
+      border: none;
+      color: white;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .btn-play:hover {
+      box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
+      transform: translateY(-2px);
+      color: white;
+    }
+    .btn-code {
+      border: 1px solid #475569;
+      color: #cbd5e1;
+      transition: 0.3s;
+    }
+    .btn-code:hover {
+      background: rgba(71, 85, 105, 0.2);
+      color: white;
+      border-color: #94a3b8;
+    }
 
-/* TEXT */
-.card p, .card li {
-  color: #cbd5f5;
-}
+    /* Technical Skills Section */
+    .skill-badge {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.1);
+      padding: 10px 16px;
+      border-radius: 12px;
+      margin: 6px;
+      display: inline-block;
+      transition: 0.3s;
+    }
+    .skill-badge:hover {
+      border-color: #6366f1;
+      background: rgba(99, 102, 241, 0.1);
+    }
 
-/* BUTTON */
-.btn-primary {
-  background: linear-gradient(45deg, #38bdf8, #6366f1);
-  border: none;
-  transition: 0.3s;
-}
+    /* Footer/Contact Links */
+    .contact-link {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+      margin: 0 10px;
+    }
+    .contact-link:hover {
+      color: #818cf8;
+      text-shadow: 0 0 10px rgba(56, 189, 248, 0.5);
+    }
 
-.btn-primary:hover {
-  box-shadow: 0 0 15px #38bdf8;
-  transform: scale(1.05);
-}
-
-.btn-outline-light {
-  border-color: #64748b;
-  color: white;
-}
-
-.btn-outline-light:hover {
-  background: #1e293b;
-  box-shadow: 0 0 10px #64748b;
-}
-
-/* GLOW LINE */
-.glow-line {
-  height: 2px;
-  background: linear-gradient(to right, transparent, #38bdf8, transparent);
-  margin: 15px 0;
-}
-
-/* HIGHLIGHT */
-.highlight-box {
-  background: rgba(2,6,23,0.8);
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 15px;
-  color: #94a3b8;
-  border: 1px solid rgba(56,189,248,0.1);
-}
-
-/* FADE ANIMATION */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1s ease forwards;
-}
-
-.fade-in:nth-child(2) { animation-delay: 0.2s; }
-.fade-in:nth-child(3) { animation-delay: 0.4s; }
-
-@keyframes fadeUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* LINKS */
-a.text-info {
-  color: #38bdf8 !important;
-}
-
-a.text-info:hover {
-  text-shadow: 0 0 10px #38bdf8;
-}
-
-</style>
+    /* Simple JavaScript Filter Classes */
+    .hide {
+      display: none !important;
+    }
+    .show {
+      animation: fadeInSmooth 0.5s ease forwards;
+    }
+    @keyframes fadeInSmooth {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-
 <body>
 
-<!-- HERO -->
-<section class="hero fade-in">
-  <h1>Nauval Khaidar</h1>
-  <div class="glow-line"></div>
-  <p class="lead">Unity Game Developer</p>
-  <p>I build gameplay systems, mechanics, and interactive experiences.</p>
-</section>
+  <header class="hero">
+    <div class="container">
+      <h1>Muhammad Nauval Khaidar</h1>
+      <p class="lead fs-4 mt-2">Junior Game Developer & Systems Programmer</p>
+      <div class="glow-line"></div>
+      <p class="mx-auto col-md-8 text-secondary">
+        Building robust end-to-end applications[cite: 6]. Expert in gameplay systems engineering (Unity/Godot)[cite: 5], 
+        AI logic integration (Machine Learning) [cite: 5, 6], and scalable full-stack web architectures[cite: 5, 6].
+      </p>
+    </div>
+  </header>
 
-<!-- PROJECTS -->
-<section class="container mb-5">
-  <h2 class="mb-4 text-center fade-in">Projects</h2>
-
-  <div class="row g-4">
-
-    <!-- PROJECT 1 -->
-    <div class="col-md-6 fade-in">
-      <div class="card p-4">
-        <h4>Tower Defense Game</h4>
-        <p>Side-scrolling tower defense inspired by Battle Cats.</p>
-
-        <ul>
-          <li>Dynamic character spawn system</li>
-          <li>Enemy AI & combat logic</li>
-          <li>Timer-based resource system</li>
-        </ul>
-
-        <div class="highlight-box">
-          Focus: system design, modular gameplay logic, and combat behavior.
-        </div>
-
-        <a href="https://tijek.itch.io/gametd" class="btn btn-primary mb-2">
-          ▶ Play Game
-        </a>
-
-        <a href="https://github.com/nauvalteaz2" class="btn btn-outline-light">
-          💻 View Code
-        </a>
-      </div>
+  <main class="container mb-5">
+    <h2 class="text-center mb-4 font-weight-bold">Featured Projects</h2>
+    
+    <div class="text-center filter-container">
+      <button class="btn-filter active" onclick="filterSelection('all')">All Projects</button>
+      <button class="btn-filter" onclick="filterSelection('game')">Game Dev</button>
+      <button class="btn-filter" onclick="filterSelection('ml')">AI/Machine Learning</button>
+      <button class="btn-filter" onclick="filterSelection('web')">Web & Cloud</button>
     </div>
 
-    <!-- PROJECT 2 -->
-    <div class="col-md-6 fade-in">
-      <div class="card p-4">
-        <h4>Platformer - Si Ireng</h4>
-        <p>Platformer prototype with animation & scene system.</p>
-
-        <ul>
-          <li>Movement & attack system</li>
-          <li>Animation state handling</li>
-          <li>Additive scene structure</li>
-        </ul>
-
-        <div class="highlight-box">
-          Focus: animation control and state transitions.
+    <div class="row g-4" id="projectsGrid">
+      
+      <div class="col-md-6 project-item game">
+        <div class="card-portfolio p-4">
+          <div>
+            <span class="project-tag">Godot 4</span>
+            <span class="project-tag">Gameplay Design</span>
+            <h4 class="card-title mt-2">Tower Defense Side-Scroller</h4>
+            <p class="text-secondary small">Strategy-driven side scroller mechanic focused on asset management and tactical spacing[cite: 11].</p>
+            <ul>
+              <li>Developed custom character spawn mechanisms based on a dynamic coin resource system[cite: 12].</li>
+              <li>Engineered custom AI enemy detection and hitboxes/area sweep algorithms[cite: 13].</li>
+              <li>Designed smooth pre-stage user interface handling for unit selection[cite: 17].</li>
+            </ul>
+          </div>
+          <div class="highlight-box">
+            <i class="bi bi-lightbulb-fill"></i> <strong>Core Focus:</strong> Resource economics balancing, combat pacing, and spatial optimization.
+          </div>
+          <div class="btn-action-group row g-2">
+            <div class="col-6"><a href="https://tijek.itch.io/gametd" target="_blank" class="btn btn-play w-100"><i class="bi bi-play-fill"></i> Play Game</a></div>
+            <div class="col-6"><a href="https://github.com/nauvalteaz2" target="_blank" class="btn btn-code w-100"><i class="bi bi-code-slash"></i> View Code</a></div>
+          </div>
         </div>
-
-        <a href="https://tijek.itch.io/si-ireng" class="btn btn-primary mb-2">
-          ▶ Play Game
-        </a>
-
-        <a href="https://github.com/nauvalteaz2" class="btn btn-outline-light">
-          💻 View Code
-        </a>
       </div>
+
+      <div class="col-md-6 project-item game">
+        <div class="card-portfolio p-4">
+          <div>
+            <span class="project-tag">Unity</span>
+            <span class="project-tag">C#</span>
+            <span class="project-tag">State Machine</span>
+            <h4 class="card-title mt-2">2D Platformer: Si Ireng</h4>
+            <p class="text-secondary small">Ongoing advanced side-scroller prototype utilizing component-based character controllers[cite: 23, 24].</p>
+            <ul>
+              <li>Implemented rigid 2D movement, automated dash states, and directional flip loops.</li>
+              <li>Built real-time animator speed blending and complex parameter state layers.</li>
+              <li>Isolated input structures mapping context calls directly into gameplay triggers.</li>
+            </ul>
+          </div>
+          <div class="highlight-box">
+            <i class="bi bi-lightbulb-fill"></i> <strong>Core Focus:</strong> Animation State machines, responsiveness manipulation, and crisp game feel.
+          </div>
+          <div class="btn-action-group row g-2">
+            <div class="col-6"><a href="https://tijek.itch.io/si-ireng" target="_blank" class="btn btn-play w-100"><i class="bi bi-play-fill"></i> Try Build</a></div>
+            <div class="col-6"><a href="https://github.com/nauvalteaz2" target="_blank" class="btn btn-code w-100"><i class="bi bi-code-slash"></i> View Code</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 project-item game">
+        <div class="card-portfolio p-4">
+          <div>
+            <span class="project-tag">Godot 4</span>
+            <span class="project-tag">2D Endless</span>
+            <h4 class="card-title mt-2">Endless Run Dino Game</h4>
+            <p class="text-secondary small">An arcade speedrunner testing player reaction thresholds and procedural obstacle setups[cite: 19, 21].</p>
+            <ul>
+              <li>Configured automated pacing loops designed to consistently increase speed factors over time.</li>
+              <li>Structured minimalist collision logic to support low-latency twitch reflex inputs.</li>
+            </ul>
+          </div>
+          <div class="highlight-box">
+            <i class="bi bi-lightbulb-fill"></i> <strong>Core Focus:</strong> Game loop optimization, obstacle generation loops, and instant response feedback.
+          </div>
+          <div class="btn-action-group row g-2">
+            <div class="col-12"><a href="https://tijek.itch.io/dino-game" target="_blank" class="btn btn-play w-100"><i class="bi bi-play-fill"></i> Play Arcade Build</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 project-item ml">
+        <div class="card-portfolio p-4">
+          <div>
+            <span class="project-tag">Python</span>
+            <span class="project-tag">Naive Bayes</span>
+            <span class="project-tag">NLP</span>
+            <h4 class="card-title mt-2">Household Item Classifier System</h4>
+            <p class="text-secondary small">Text analysis system classifying asset definitions into precise item matrices[cite: 27, 28].</p>
+            <ul>
+              <li>Deployed mathematical classification algorithms parsing data vectors accurately[cite: 28].</li>
+              <li>Maintained robust pipeline architectures sorting structured string datasets[cite: 28].</li>
+            </ul>
+          </div>
+          <div class="highlight-box">
+            <i class="bi bi-lightbulb-fill"></i> <strong>Gen AI Ready:</strong> Understands data structuring algorithms, perfect for interpreting/automating procedurally generated map datasets.
+          </div>
+          <div class="btn-action-group row g-2">
+            <div class="col-12"><a href="https://github.com/nauvalteaz2/MLnaivebayesV2" target="_blank" class="btn btn-code w-100"><i class="bi bi-github"></i> Repository Link</a></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 project-item web">
+        <div class="card-portfolio p-4">
+          <div>
+            <span class="project-tag">React.js</span>
+            <span class="project-tag">Vite</span>
+            <span class="project-tag">Docker</span>
+            <span class="project-tag">REST API</span>
+            <h4 class="card-title mt-2">Full-Stack Application Containerization</h4>
+            <p class="text-secondary small">End-to-end container delivery system orchestrating reliable environment wrappers[cite: 6, 32].</p>
+            <ul>
+              <li>Engineered interactive client frontends using React and Vite configurations[cite: 34, 35].</li>
+              <li>Isolated backend distributions inside lightweight Docker engine instances[cite: 6, 32].</li>
+            </ul>
+          </div>
+          <div class="highlight-box">
+            <i class="bi bi-lightbulb-fill"></i> <strong>Core Focus:</strong> Cloud deployments, configuration management, and smooth web interface integrations.
+          </div>
+          <div class="btn-action-group row g-2">
+            <div class="col-6"><a href="https://github.com/nauvalteaz2/sisiklien" target="_blank" class="btn btn-code w-100"><i class="bi bi-cpu"></i> Frontend Git</a></div>
+            <div class="col-6"><a href="https://github.com/nauvalteaz2/sisiserver" target="_blank" class="btn btn-code w-100"><i class="bi bi-hdd-network"></i> Backend Git</a></div>
+          </div>
+        </div>
+      </div>
+
     </div>
+  </main>
 
-  </div>
-</section>
+  <section class="container mb-5 text-center">
+    <h3 class="mb-4">Technical Stack & Tools</h3>
+    <div class="d-flex flex-wrap justify-content-center max-width-800 mx-auto">
+      <span class="skill-badge"><i class="text-primary bi bi-code-square"></i> C# / C++</span>
+      <span class="skill-badge"><i class="text-warning bi bi-filetype-py"></i> Python</span>
+      <span class="skill-badge"><i class="text-info bi bi-unity"></i> Unity Engine</span>
+      <span class="skill-badge"><i class="text-danger bi bi-box-seam-fill"></i> Godot 4</span>
+      <span class="skill-badge"><i class="text-info bi bi-box"></i> Docker</span>
+      <span class="skill-badge"><i class="text-cyan bi bi-braces-asterisk"></i> React / Vite</span>
+      <span class="skill-badge"><i class="bi bi-database"></i> SQL / PHP</span>
+      <span class="skill-badge"><i class="text-warning bi bi-gem"></i> Blender & Aseprite</span>
+    </div>
+  </section>
 
-<!-- CONTACT -->
-<section class="text-center mb-5 fade-in">
-  <h3>Contact</h3>
-  <div class="glow-line"></div>
-  <p>Email: nauvalteaz@gmail.com</p>
-  <p>
-    <a href="https://github.com/nauvalteaz2" class="text-info">GitHub</a> |
-    <a href="https://tijek.itch.io/" class="text-info">itch.io</a>
-  </p>
-</section>
+  <footer class="text-center py-5 border-top border-secondary border-opacity-10">
+    <h3>Get In Touch</h3>
+    <div class="glow-line"></div>
+    <p class="text-secondary mb-3">Semarang, Indonesia [cite: 3] | Open for Junior Developer & Level Design Roles</p>
+    <p class="fs-5 mb-4"><strong>Email:</strong> <a href="mailto:nauvalteaz@gmail.com" class="text-info">nauvalteaz@gmail.com</a></p>
+    <div>
+      <a href="https://github.com/nauvalteaz2" target="_blank" class="contact-link"><i class="bi bi-github"></i> GitHub</a>
+      <a href="https://tijek.itch.io/" target="_blank" class="contact-link"><i class="bi bi-controller"></i> Itch.io Profile</a>
+    </div>
+  </footer>
 
+  <script>
+    function filterSelection(category) {
+      const items = document.getElementsByClassName("project-item");
+      const buttons = document.getElementsByClassName("btn-filter");
+      
+      // Update active state of buttons
+      for (let btn of buttons) {
+        if (btn.innerText.toLowerCase().includes(category) || (category === 'all' && btn.innerText.includes('All'))) {
+          btn.classList.add("active");
+        } else {
+          btn.classList.remove("active");
+        }
+      }
+
+      // Filter logic
+      for (let item of items) {
+        if (category === "all") {
+          item.classList.remove("hide");
+          item.classList.add("show");
+        } else {
+          if (item.classList.contains(category)) {
+            item.classList.remove("hide");
+            item.classList.add("show");
+          } else {
+            item.classList.add("hide");
+            item.classList.remove("show");
+          }
+        }
+      }
+    }
+
+    // Initialize with all projects visible
+    document.addEventListener("DOMContentLoaded", () => {
+      filterSelection('all');
+    });
+  </script>
 </body>
 </html>
