@@ -189,7 +189,7 @@
 
   <main class="container mb-5">
     <h2 class="text-center mb-4 font-weight-bold">Featured Projects</h2>
-    
+     
     <div class="text-center filter-container">
       <button class="btn-filter active" onclick="filterSelection('all')">All Projects</button>
       <button class="btn-filter" onclick="filterSelection('game')">Game Dev</button>
@@ -198,7 +198,7 @@
     </div>
 
     <div class="row g-4" id="projectsGrid">
-      
+       
       <div class="col-md-6 project-item game">
         <div class="card-portfolio p-4">
           <div>
@@ -240,7 +240,7 @@
           </div>
           <div class="btn-action-group row g-2">
             <div class="col-12"><a href="https://tijek.itch.io/si-ireng" target="_blank" class="btn btn-play w-100"><i class="bi bi-play-fill"></i> Try Build</a></div>
-        </div>
+          </div> </div>
       </div>
 
       <div class="col-md-6 project-item game">
@@ -343,7 +343,6 @@
       const items = document.getElementsByClassName("project-item");
       const buttons = document.getElementsByClassName("btn-filter");
       
-      // Update active state of buttons
       for (let btn of buttons) {
         if (btn.innerText.toLowerCase().includes(category) || (category === 'all' && btn.innerText.includes('All'))) {
           btn.classList.add("active");
@@ -352,7 +351,6 @@
         }
       }
 
-      // Filter logic
       for (let item of items) {
         if (category === "all") {
           item.classList.remove("hide");
@@ -369,7 +367,6 @@
       }
     }
 
-    // Initialize with all projects visible
     document.addEventListener("DOMContentLoaded", () => {
       filterSelection('all');
     });
